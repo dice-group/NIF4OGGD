@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>nif4oggd</artifactId>
+        <groupId>nif4oggd</groupId>
+        <version>0.1</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <name>NIF4oggd - Web</name>
+    <packaging>war</packaging>
+    <artifactId>web</artifactId>
+
+
+    <!-- Project properties -->
+    <properties>
+         <prj.name.uri>nif4oggd</prj.name.uri>
+        <!--
+            Instructions:
+
+           on <maven_directory>/conf/settings.xml,
+
+           create a new config on <servers> </servers> tag like following info:
+
+        	<server>
+		        <id>server_name</id>
+		        <username>admin</username>
+		        <password>type_admin_password_here</password>
+	         </server>
+
+        -->
+        <server.name>server_name</server.name>
+        <url.tomcat.manager>http://localhost:8080/manager</url.tomcat.manager>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <build>
+        <finalName>nif4oggd</finalName>
+        <plugins>
+
+            <!-- Maven Tomcat Plugin -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>tomcat-maven-plugin</artifactId>
+                <version>1.1</version>
+                <configuration>
+                    <url>${url.tomcat.manager}</url>
+                    <server>${server.name}</server>
+                    <path>/${prj.name.uri}</path>
+                </configuration>
+            </plugin>
+
+
+            <!-- Tomcat plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.1.1</version>
+                <configuration>
+                    <warSourceDirectory>src/web</warSourceDirectory>
+                    <webXml>src/web/WEB-INF/web.xml</webXml>
+                    <webResources>
+                        <!--
+                        <resource>
+                            <targetPath>WEB-INF/classes</targetPath>
+                            <directory>${nif4oggd.basedir}/conf</directory>
+                            <filtering>true</filtering>
+                            <includes>
+                                <include>server.properties</include>
+                            </includes>
+                        </resource>
+                         -->
+                        <resource>
+                            <targetPath>WEB-INF/classes</targetPath>
+                            <directory>${nif4oggd.basedir}/src/main/resources</directory>
+                            <filtering>true</filtering>
+                            <includes>
+                                <include>log4j.properties</include>
+                            </includes>
+                        </resource>
+                    </webResources>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-server</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-servlet</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>nif4oggd</groupId>
+            <artifactId>common</artifactId>
+            <version>0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>nif4oggd</groupId>
+            <artifactId>core</artifactId>
+            <version>0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.web</groupId>
+            <artifactId>jstl-impl</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>servlet-api</artifactId>
+                    <groupId>javax.servlet</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>jsp-api</artifactId>
+                    <groupId>javax.servlet.jsp</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>jstl-api</artifactId>
+                    <groupId>javax.servlet.jsp.jstl</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+    </dependencies>
+
+
+</project>

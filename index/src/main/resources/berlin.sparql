@@ -1,0 +1,19 @@
+PREFIX lgd:   <http://linkedgeodata.org/ontology/>
+PREFIX geovocab:   <http://geovocab.org/geometry#>
+
+SELECT DISTINCT  ?s ?streetLabel ?lat ?long
+FROM <http://thedatahub.org/dataset/lgd-berlin>
+WHERE
+{
+  ?s a                 lgd:HighwayThing;
+     rdfs:label        ?streetLabel;
+     geovocab:geometry ?geometry.
+
+  ?geometry lgd:posSeq ?posSeq.
+
+  ?posSeq ?posSeqP ?posSeqO.
+
+  ?s2 geovocab:geometry ?posSeqO;
+      geo:lat           ?lat;
+      geo:long          ?long.
+} LIMIT 9999999999

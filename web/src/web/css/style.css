@@ -1,0 +1,392 @@
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+ v2.0 | 20110126
+ License: none (public domain)
+*/
+html, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, docs, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Utils 
+=================================================== */
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Basics
+=================================================== */
+
+a{
+  text-decoration: none;
+  color: #333;
+  &:hover{
+  }
+  &:active{
+  }
+}
+
+strong{
+  font-weight: bolder;
+}
+
+/* Layout
+=================================================== */
+#main{
+  width: 1115px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#html-link{
+  position: absolute;
+  top: 7px;
+  right: -44px;
+}
+
+header{
+  height: 40px;
+  background: #464646;
+  padding: 0 20px;
+  line-height: 40px;
+}
+
+#content{
+  background: #74ca8f url(bg-main.jpg) no-repeat left top;
+  border: 1px solid #b8b5b7;
+  border-top: none;
+  padding: 20px;
+}
+
+/* docs
+=================================================== */
+#docs{
+  float: left;
+  margin: 0 20px 20px 0;
+  width: 262px;
+  background: #fff;
+  height: 201px;
+  div{
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+  }
+  h2{
+    font-size: 18px;
+    margin: 0 0 20px;
+    height: 18px;
+  }
+  docs{
+    width: 100%;
+    height: 28px;
+    border-radius: 0;
+  }
+}
+#docs-container{
+  height: 175px;
+  background: #e5e5e5;
+  font-size: 12px;
+  a{
+    display: block;
+    padding: 10px;
+    &:hover{
+      background: #d4d4d4;
+    }
+    &.active{
+      background: #d4d4d4;
+    }
+  }
+}
+
+/* Transcription
+=================================================== */
+#governament_document{
+  margin-bottom: 20px;
+  float: left;
+  width: 711px;
+  background: #fff;
+  div{
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+  }
+  h2{
+    font-size: 18px;
+    margin: 0 0 20px;
+    height: 18px;
+  }
+}
+
+#governament_document-container{
+  font-size: 14px;
+  height: 201px;
+  line-height: 18px;
+  p{
+    margin: 0 0 15px;
+    &:last-child{
+      margin: 0;
+    }
+  }
+}
+
+/* Tags
+=================================================== */
+#tags{
+  background: #fff;
+  div{
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+  }
+  h2{
+    font-size: 18px;
+    margin: 0 0 20px;
+    height: 18px;
+    float: left;
+    &.title-tags{
+      width: 650px;
+    }
+    &.title-classify{
+      small{
+        font-size: 12px;
+        margin: 0 0 0 10px;
+        a{
+          color: #666;
+          display: inline-block;
+          height: 16px;
+          line-height: 16px;
+          padding: 0 18px 0 0;
+          background: url(question.png) no-repeat right top;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  ul{
+    li{
+      overflow: hidden;
+      padding: 0 0 0 13px;
+      border-radius: 5px;
+      height: 37px;
+      line-height: 37px;
+      font-size: 14px;
+      margin: 0 0 10px;
+      background: #fafafa; /* Old browsers */
+      background: -moz-linear-gradient(top,  #fafafa 0%, #e7e7e7 100%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fafafa), color-stop(100%,#e7e7e7)); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top,  #fafafa 0%,#e7e7e7 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top,  #fafafa 0%,#e7e7e7 100%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(top,  #fafafa 0%,#e7e7e7 100%); /* IE10+ */
+      background: linear-gradient(to bottom,  #fafafa 0%,#e7e7e7 100%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#e7e7e7',GradientType=0 ); /* IE6-9 */
+      a{
+        float: right;
+        padding: 0 20px 0 22px;
+        background: url(separador.jpg) repeat-y left top;
+        &:hover{
+          background-color: #dfdfdf;
+        }
+        &.active{
+          background-color: #dfdfdf;
+        }
+      }
+      &:last-child{
+        margin: 0;
+      }
+    }
+  }
+}
+
+/* Header
+=================================================== */
+header{
+  hgroup{
+    float: left;
+    color: #7cc884;
+    font-size: 18px;
+  }
+  #user{
+    float: right;
+    color: #d5e7d7;
+    strong{
+      float: left;
+    }
+    img{
+      float: left;
+      margin: 0 0 0 10px;
+    }
+  }
+  #menu{
+    float: right;
+    color: #d5e7d7;
+    margin: 0 30px 0 0;
+    a{
+      color: #d5e7d7;
+      font-size: 14px;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/* Content
+=================================================== */
+#docs,#governament_document,#tags{
+  padding: 20px;
+  position: relative;
+  margin-top: 26px;
+  box-shadow: 0 0 2px #444;
+  hgroup{
+    color: #fff;
+    font-size: 36px;
+    height: 36px;
+    overflow: hidden;
+    position: absolute;
+    top: -34px;
+    left: -2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 2px #000;
+  }
+  span.hide-shadow{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    height: 5px;
+    width: 100%;
+  }
+}
+/* saf3+, chrome1+ */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  #docs,#governament_document,#tags{
+    hgroup{
+      top: -33px;
+    }
+  }
+}
+.ie10{
+  #docs,#transcription,#tags{
+    hgroup{
+      top: -30px;
+    }
+  }
+}
+
+/* Footer
+=================================================== */
+footer{
+  font-size: 11px;
+  text-align: center;
+  padding: 5px 0;
+}
+
+/* Modal
+=================================================== */
+.box-modal{
+  display: none;
+  font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  ul{
+    li{
+      margin: 0 0 10px;
+    }
+  }
+  p{
+    margin: 0 0 10px;
+  }
+}
+
+/* Scroller
+=================================================== */
+/** initial setup **/
+.nano {
+  position : relative;
+  width : 100%;
+  height : 100%;
+  overflow : hidden;
+}
+.nano .content {
+  position : absolute;
+  overflow : scroll;
+  overflow-x : hidden;
+  top : 0;
+  right : 0;
+  bottom : 0;
+  left : 0;
+}
+.nano .content:focus {
+  outline: thin dotted;
+}
+.nano .content::-webkit-scrollbar {
+  visibility: hidden;
+}
+.has-scrollbar .content::-webkit-scrollbar {
+  visibility: visible;
+}
+.nano > .pane {
+  background : rgba(0,0,0,.25);
+  position : absolute;
+  width : 10px;
+  right : 0;
+  top : 0;
+  bottom : 0;
+  visibility : hidden\9; /* Target only IE7 and IE8 with this hack */
+  opacity : .01;
+  -webkit-transition : .2s;
+  -moz-transition : .2s;
+  -o-transition : .2s;
+  transition : .2s;
+  -moz-border-radius : 5px;
+  -webkit-border-radius : 5px;
+  border-radius : 5px;
+}
+.nano > .pane > .slider {
+  background: #444;
+  background: rgba(0,0,0,.5);
+  position : relative;
+  margin : 0 1px;
+  -moz-border-radius : 3px;
+  -webkit-border-radius : 3px;
+  border-radius : 3px;
+}
+.nano:hover > .pane, .pane.active, .pane.flashed {
+  visibility : visible\9; /* Target only IE7 and IE8 with this hack */
+  opacity : 0.99;
+}

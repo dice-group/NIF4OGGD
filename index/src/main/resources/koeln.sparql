@@ -1,0 +1,23 @@
+PREFIX lgd:   <http://linkedgeodata.org/ontology/>
+PREFIX geovocab:   <http://geovocab.org/geometry#>
+
+SELECT DISTINCT  ?s ?streetLabel ?lat ?long
+FROM <http://thedatahub.org/dataset/lgd-koeln-bonn>
+WHERE
+{
+  ?s a                 lgd:HighwayThing;
+     rdfs:label        ?streetLabel;
+     geovocab:geometry ?geometry.
+
+  ?geometry lgd:posSeq ?posSeq.
+
+  ?posSeq ?posSeqP ?posSeqO.
+
+  ?s2 geovocab:geometry ?posSeqO;
+      geo:lat           ?lat;
+      geo:long          ?long.
+      FILTER ((?lat < 51.085369)  AND
+              (?lat >  50.830711) AND
+              (?long < 7.156390)  AND
+              (?long > 6.766590))
+} LIMIT 9999999999
