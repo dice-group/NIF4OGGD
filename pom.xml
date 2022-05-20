@@ -27,7 +27,7 @@
         <log4j.version>1.2.17</log4j.version>
         <apache.common.logs.version>1.1.1</apache.common.logs.version>
         <nif4oggd.basedir>${project.basedir}</nif4oggd.basedir>
-        <json.gson.version>2.2.4</json.gson.version>
+        <json.gson.version>2.8.9</json.gson.version>
         <apache.commons.io>2.4</apache.commons.io>
         <jena.version>2.10.1</jena.version>
         <jena.iri.version>0.9.6</jena.iri.version>
