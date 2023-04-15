@@ -19,7 +19,7 @@
 
     <properties>
         <lucene.version>4.3.1</lucene.version>
-        <junit.version>4.11</junit.version>
+        <junit.version>4.13.1</junit.version>
         <maven.compiler.version>3.1</maven.compiler.version>
         <jersey.version>1.10</jersey.version>
         <jstl.version>1.2</jstl.version>
